@@ -14,7 +14,5 @@ import MainLayout from '@/layouts/MainLayout.vue';
         <GallerySection :id="'gallery'" />
         <GalleryCta :id="'gallery-cta'" />
 
-
-        <FooterSection :id="'footer'" />
     </MainLayout>
 </template>
