@@ -1,14 +1,19 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import Icon from '../Icon.vue';
 import Lightbox from '../Lightbox.vue';
 import Badge from '../ui/badge/Badge.vue';
 import Button from '../ui/button/Button.vue';
+import CtaPurchase from './CtaPurchase.vue';
 
 interface Props {
     id: string;
+    isPurchased: boolean;
 }
 
 const props = defineProps<Props>();
+
+const isPurchased = ref(true);
 
 // All gallery images for the lightbox carousel
 const images: string[] = [
@@ -45,9 +50,9 @@ const handleExternalLink = (link : string) => {
         </div>
 
         <!-- Grid Gallery -->
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
             <!-- Tile 1: gal-1 (index 0) -->
-            <div class="relative col-start-1 row-span-1 row-start-1">
+            <div class="relative lg:col-start-1 lg:row-span-1 lg:row-start-1">
                 <Lightbox :images="images" :initialIndex="0">
                     <img src="/storage/gal-1.jpg" alt="Gallery" class="h-full w-full object-cover" />
                     <Button
@@ -59,7 +64,7 @@ const handleExternalLink = (link : string) => {
             </div>
 
             <!-- Tile 2: gal-2 (index 1) -->
-            <div class="group relative col-start-2 row-span-1 row-start-1">
+            <div class="group relative lg:col-start-2 lg:row-span-1 lg:row-start-1">
                 <Lightbox :images="images" :initialIndex="1">
                     <img src="/storage/gal-2.jpg" alt="Gallery" class="h-full w-full object-cover" />
                     <Button
@@ -71,7 +76,7 @@ const handleExternalLink = (link : string) => {
             </div>
 
             <!-- Tile 3: gal-4 (index 3) -->
-            <div class="group relative col-start-3 row-span-2">
+            <div class="group relative lg:col-start-3 lg:row-span-2">
                 <Lightbox :images="images" :initialIndex="3" class="h-full cursor-pointer">
                     <img src="/storage/gal-4.jpg" alt="Gallery" class="h-full w-full object-cover" />
                 </Lightbox>
@@ -84,7 +89,7 @@ const handleExternalLink = (link : string) => {
             </div>
 
             <!-- Tile 4: gal-3 (index 2) -->
-            <div class="group relative col-span-2 col-start-1 row-span-1 row-start-2">
+            <div class="group relative lg:col-span-2 lg:col-start-1 lg:row-span-1 lg:row-start-2">
                 <Lightbox :images="images" :initialIndex="2" class="aspect-video cursor-pointer">
                     <img src="/storage/gal-3.jpg" alt="Gallery" class="h-full w-full object-cover" />
                     <Button
@@ -96,7 +101,7 @@ const handleExternalLink = (link : string) => {
             </div>
 
             <!-- Tile 5: gal-5 (index 4) -->
-            <div class="relative col-span-2 col-start-1 row-span-2 row-start-3">
+            <div class="relative lg:col-span-2 lg:col-start-1 lg:row-span-2 lg:row-start-3">
                 <Lightbox :images="images" :initialIndex="4">
                     <img src="/storage/gal-5.jpg" alt="Gallery" class="h-full w-full object-cover" />
                 </Lightbox>
@@ -109,7 +114,7 @@ const handleExternalLink = (link : string) => {
             </div>
 
             <!-- Tile 6: gal-6 (index 5) -->
-            <div class="group relative col-start-3 row-start-3">
+            <div class="group relative lg:col-start-3 lg:row-start-3">
                 <Lightbox :images="images" :initialIndex="5">
                     <img src="/storage/gal-6.jpg" alt="Gallery" class="h-full w-full object-cover" />
                     <Button
@@ -121,7 +126,7 @@ const handleExternalLink = (link : string) => {
             </div>
 
             <!-- Tile 7: gal-7 (index 6) -->
-            <div class="group relative col-start-3 row-start-4">
+            <div class="group relative lg:col-start-3 lg:row-start-4">
                 <Lightbox :images="images" :initialIndex="6">
                     <img src="/storage/gal-7.jpg" alt="Gallery" class="h-full w-full object-cover" />
                     <Button
@@ -133,6 +138,7 @@ const handleExternalLink = (link : string) => {
             </div>
         </div>
     </section>
+    <CtaPurchase v-if="props.isPurchased || isPurchased" :id="'cta-purchase'" />
 </template>
 
 <style scoped>

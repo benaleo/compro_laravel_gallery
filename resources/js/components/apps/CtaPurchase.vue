@@ -17,12 +17,12 @@ const handleExternalLink = (link : string) => {
 
 <template>
     <section :id="props.id" class="container mx-auto my-12  flex gap-4 w-full flex-col items-center justify-center py-8 px-12 lg:px-2 md:flex-row">
-        <div class="relative w-[200px] h-[200px]">
+        <div class="relative w-[200px]">
             <img :src="image" alt="Gallery" class="w-full h-full object-cover floating" />
         </div>
-        <div class="space-y-4 px-8 w-full">
-            <h1 class="text-3xl font-bold">Template is Now Available</h1>
-            <p class="text-xl text-slate-600 max-w-[80%]">Over 9 million digital products by a global community.</p>
+        <div class="space-y-4 px-8 w-full text-center md:text-left">
+            <h1 class="text-xl md:text-3xl font-bold">Template is Now Available</h1>
+            <p class="md:text-xl text-slate-600 md:max-w-[80%]">Over 9 million digital products by a global community.</p>
         </div>
         <Button @click="handleExternalLink('/gallery')" class="whitespace-nowrap rounded-full cursor-pointer text-2xl" variant="gradient">
         <ShoppingBag class="mr-2" />
