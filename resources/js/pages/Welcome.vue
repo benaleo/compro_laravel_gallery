@@ -1,0 +1,24 @@
+<script setup lang="ts">
+import BrandSection from '@/components/apps/BrandSection.vue';
+import CountMemberSection from '@/components/apps/CountMemberSection.vue';
+import CtaPurchase from '@/components/apps/CtaPurchase.vue';
+import FooterSection from '@/components/apps/FooterSection.vue';
+import GalleryCta from '@/components/apps/GalleryCta.vue';
+import GallerySection from '@/components/apps/GallerySection.vue';
+import HeroSection from '@/components/apps/HeroSection.vue';
+import ListFeatureSection from '@/components/apps/ListFeatureSection.vue';
+import MainLayout from '@/layouts/MainLayout.vue';
+</script>
+
+<template>
+    <MainLayout>
+        <HeroSection :id="'hero'" />
+        <ListFeatureSection :id="'feature'" />
+        <GallerySection :id="'gallery'" />
+        <GalleryCta :id="'gallery-cta'" />
+        <BrandSection :id="'brand'" />
+        <CountMemberSection :id="'count-member'" />
+        <CtaPurchase :id="'cta-purchase'" />
+
+    </MainLayout>
+</template>
