@@ -4,16 +4,12 @@ import Icon from '../Icon.vue';
 import Lightbox from '../Lightbox.vue';
 import Badge from '../ui/badge/Badge.vue';
 import Button from '../ui/button/Button.vue';
-import CtaPurchase from './CtaPurchase.vue';
 
 interface Props {
     id: string;
-    isPurchased: boolean;
 }
 
 const props = defineProps<Props>();
-
-const isPurchased = ref(true);
 
 // All gallery images for the lightbox carousel
 const images: string[] = [
@@ -138,7 +134,7 @@ const handleExternalLink = (link : string) => {
             </div>
         </div>
     </section>
-    <CtaPurchase v-if="props.isPurchased || isPurchased" :id="'cta-purchase'" />
+    <slot />
 </template>
 
 <style scoped>
