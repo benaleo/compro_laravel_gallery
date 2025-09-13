@@ -1,9 +1,9 @@
 <template>
-    <nav class="h-16 w-full bg-slate-100">
+    <nav class="sticky top-0 z-50 h-16 w-full bg-white/80 backdrop-blur-md transition-shadow duration-300 hover:shadow-md">
         <div class="container mx-auto flex h-full items-center justify-between py-1">
             <!-- Logo -->
             <div class="flex h-full items-center gap-2 py-2">
-                <img :src="logo" alt="logo" class="h-10" />
+                <img :src="isScrolled ? logoGradient : logo" alt="logo" class="h-10 transition-all duration-300" />
                 <Separator orientation="vertical" />
                 <span class="text-2xl font-bold text-slate-800">Design at its finest</span>
             </div>
@@ -44,13 +44,28 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted, onUnmounted } from 'vue';
 import logo from '~/storage/gallery-logo-dark.png';
+import logoGradient from '~/storage/gallery-logo-gradient.png';
 import Icon from '../Icon.vue';
 import Separator from '../ui/separator/Separator.vue';
 import { Link } from '@inertiajs/vue3';
 
 const isMenuOpen = ref(false);
+const isScrolled = ref(false);
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 10;
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);  
+  handleScroll(); // Check initial scroll position
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
 
 const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value;
