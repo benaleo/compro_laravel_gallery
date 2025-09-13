@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import BrandSection from '@/components/apps/BrandSection.vue';
+import CountMemberSection from '@/components/apps/CountMemberSection.vue';
 import FooterSection from '@/components/apps/FooterSection.vue';
 import GalleryCta from '@/components/apps/GalleryCta.vue';
 import GallerySection from '@/components/apps/GallerySection.vue';
@@ -15,6 +16,7 @@ import MainLayout from '@/layouts/MainLayout.vue';
         <GallerySection :id="'gallery'" />
         <GalleryCta :id="'gallery-cta'" />
         <BrandSection :id="'brand'" />
+        <CountMemberSection :id="'count-member'" />
 
     </MainLayout>
 </template>
