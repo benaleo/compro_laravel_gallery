@@ -8,3 +8,8 @@
 
 CHANGELOG.md export-ignore
 README.md export-ignore
+
+# Ensure LF endings for scripts and config in CI
+*.sh text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
