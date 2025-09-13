@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import FooterSection from '@/components/apps/FooterSection.vue';
+import GallerySection from '@/components/apps/GallerySection.vue';
 import HeroSection from '@/components/apps/HeroSection.vue';
 import ListFeatureSection from '@/components/apps/ListFeatureSection.vue';
 import MainLayout from '@/layouts/MainLayout.vue';
@@ -9,6 +10,9 @@ import MainLayout from '@/layouts/MainLayout.vue';
     <MainLayout>
         <HeroSection :id="'hero'" />
         <ListFeatureSection :id="'feature'" />
+        <GallerySection :id="'gallery'" />
+
+
         <FooterSection :id="'footer'" />
     </MainLayout>
 </template>
