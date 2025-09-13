@@ -3,7 +3,9 @@
         <div class="container mx-auto flex h-full items-center justify-between py-1">
             <!-- Logo -->
             <div class="flex h-full items-center gap-2 py-2">
-                <img :src="isScrolled ? logoGradient : logo" alt="logo" class="h-10 transition-all duration-300" />
+                <a href="/">
+                    <img :src="isScrolled ? logoGradient : logo" alt="logo" class="h-10 transition-all duration-300" />
+                </a>
                 <Separator orientation="vertical" />
                 <span class="text-2xl font-bold text-slate-800">Design at its finest</span>
             </div>
