@@ -5,6 +5,14 @@ import laravel from 'laravel-vite-plugin';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+    // Force cross-platform CSS minification to avoid lightningcss native binary issues
+    build: {
+        cssMinify: 'esbuild',
+    },
+    css: {
+        // Ensure Vite does not try to use lightningcss transformer
+        transformer: 'postcss',
+    },
     resolve: {
         alias: {
             '~': '/public',
