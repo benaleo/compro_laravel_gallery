@@ -91,11 +91,11 @@ const menuItems = [
                         leave-from-class="opacity-100 translate-y-0"
                         leave-to-class="opacity-0 -translate-y-4"
                     >
-                        <div v-if="isMenuOpen" class="fixed left-0 right-0 top-16 z-50 bg-white shadow-lg pt-4 pb-6 px-6">
-                            <div v-for="item in menuItems" :key="item.title" class="py-2 border-b border-gray-100 last:border-b-0">
+                        <div v-if="isMenuOpen" class="fixed lg:relative flex flex-col lg:flex-row left-0 right-0 top-16 z-50 bg-white shadow-lg pt-4 pb-6 px-6 lg:p-0 lg:items-center lg:top-0 lg:bg-transparent lg:shadow-none lg:gap-6">
+                            <div v-for="item in menuItems" :key="item.title" class="group py-2 border-b border-gray-100 last:border-b-0">
                                 <Link 
                                     :href="item.href" 
-                                    class="text-lg font-medium text-slate-800 hover:text-blue-600 transition-colors duration-200 block py-2"
+                                    class="text-lg font-medium text-slate-800 group-hover:text-blue-600 transition-colors duration-200 block py-2"
                                     @click="isMenuOpen = false"
                                 >
                                     {{ item.title }}
