@@ -14,7 +14,7 @@ const handleExternalLink = (link : string) => {
 </script>
 
 <template>
-    <section :id="props.id" class="container mx-auto flex gap-4 w-full flex-col items-center justify-center py-8 md:flex-row">
+    <section :id="props.id" class="container mx-auto my-12  flex gap-4 w-full flex-col items-center justify-center py-8 px-12 lg:px-2 md:flex-row">
         <img src="/storage/cta-like.png" alt="Gallery" class="w-[200px] object-cover" />
         <div class="space-y-4 px-8 w-full">
             <h1 class="text-3xl font-bold">Visit our new gallery</h1>

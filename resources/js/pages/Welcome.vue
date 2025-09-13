@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import BrandSection from '@/components/apps/BrandSection.vue';
 import FooterSection from '@/components/apps/FooterSection.vue';
 import GalleryCta from '@/components/apps/GalleryCta.vue';
 import GallerySection from '@/components/apps/GallerySection.vue';
@@ -13,6 +14,7 @@ import MainLayout from '@/layouts/MainLayout.vue';
         <ListFeatureSection :id="'feature'" />
         <GallerySection :id="'gallery'" />
         <GalleryCta :id="'gallery-cta'" />
+        <BrandSection :id="'brand'" />
 
     </MainLayout>
 </template>
