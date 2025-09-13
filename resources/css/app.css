@@ -164,4 +164,8 @@
     body {
         @apply bg-[#f8f9fa] min-h-screen;
     }
+
+    .text-gradient {
+        @apply bg-gradient-to-r from-[#f468b1] via-[#f468b1] to-[#7f75fc] text-transparent bg-clip-text font-semibold;
+    }
 }
